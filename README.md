@@ -34,8 +34,11 @@ On a donc créé un model qui prend en compte 3 attributs: l'**:email**, le **:n
   
   SI y a pas la suite c'est que j'ai pas eu le temps de finir mon REadME avant le gong :)
 
-1.3. CRUD
-Pour le model User, fais un petit CRUD, afin de ne pas perdre la main ✌️
+## 1.3. CRUD
+On se fait notre petit *CRUD* pour le model User:
+* Methode new: @user = User.new
+* Une Méthode create: @user = User.new(user_params)
+*  dq
 
 2. Brève architecture
 Voici les deux pages importantes du site :
