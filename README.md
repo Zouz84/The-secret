@@ -11,7 +11,7 @@ Ce qu'il y a à savoir: Rien.
 # 1.1. Création
 Console > **rails new secret**.
 **cd secret**
-SublimText > Ouvrir le dossier *secret*. Ouvrir le fichier *Gemfile*. Ctrl+a. Suppr. Ouvrir le fichier [Gemfile de Felix](https://github.com/felhix/cheat_sheets/blob/master/Ruby/Gemfile.rb). Ctrl+a. Ctrl+c. On ctrl+c tout ça dans le *Gemfile* du dossier *secret*. 
+SublimText > Ouvrir le dossier *secret*. Ouvrir le fichier *Gemfile*. Ctrl+a. Suppr. Ouvrir le fichier [Gemfile de Felix](https://github.com/felhix/cheat_sheets/blob/master/Ruby/Gemfile.rb). Ctrl+a. Ctrl+c. On ctrl+v tout ça dans le *Gemfile* du dossier *secret*. 
 
 ## 1.2. Le model
 Console > **Rails generate model User email:string**
