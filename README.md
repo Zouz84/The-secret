@@ -47,6 +47,17 @@ On se fait notre petit *CRUD* pour le model User:
 * Une Methode New: `@user = User.new`
 * Une Méthode Create: `@user = User.new(user_params)`
 * Une Methode Show: `@user = User.find(params[:id])`
+``` ruby
+ if @user.save
+      flash[:success] = "success"
+      
+      log_in @user
+      redirect_to @user
+
+    else render 'new'
+    end
+    ```
+* Une Methode
 
 
 
