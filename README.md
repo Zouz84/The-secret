@@ -16,7 +16,7 @@ SublimText > Ouvrir le dossier *secret*. Ouvrir le fichier *Gemfile*. Ctrl+a. Su
 ## 1.2. Le model
 Console > **Rails generate model User email:string**
 Sublime text > app > models > user.rb
-On ajoute la ligne ***has_secure_password
+On fais appel à la méthode ***has_secure_password </br>
   validates :password, presence: true, length: { minimum: 6 }**
   
   SI y a pas la suite c'est que j'ai pas eu le temps de finir mon REadME avant le gong :)
