@@ -5,4 +5,10 @@
 
 First of all, have a look on what's we've done yesterday on that amazing Heroku app: [Secret de l'Univers](https://secret-de-lunivers.herokuapp.com/).
 
+Ce qu'il y a à savoir: Rien.
+
+'''<% if logged_in? %>'''
+
+
+
 
