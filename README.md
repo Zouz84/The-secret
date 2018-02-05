@@ -42,7 +42,7 @@ On se fait notre petit *CRUD* pour le model User:
 * Une Methode Show: `@user = User.find(params[:id])`
 
 ```ruby
-# @user = User.new
+@user = User.new
 ```
 
 2. Brève architecture
