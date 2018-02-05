@@ -6,12 +6,12 @@
  
 <div class="row">
   <div class="col-md-6 col-md-offset-3"> 
-	<%= submit_tag "Edit User", class: "btn btn-primary" %>
+	<%= submit_tag "Editer", class: "btn btn-danger" %>
   </div>
 </div>
 
 <% end %>
 
- <p> <%= link_to "delete profile", user_path(@user),
+ <p> <%= link_to "supprimer le compte", user_path(@user),
               method: :delete,
-              data: { confirm: 'sure ?' } %> </p>
+              data: { confirm: 'Fais pas le con, pose cette souris ! Tu vas pas te supprimer comme ça quand même?' } %> </p>

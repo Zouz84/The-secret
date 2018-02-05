@@ -45,7 +45,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: red;
+  color: black;
 }
 
 p {
@@ -62,13 +62,13 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: red;
+  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
  
   &:hover {
-    color: white;
+    color: grey;
     text-decoration: none;
   }
 }

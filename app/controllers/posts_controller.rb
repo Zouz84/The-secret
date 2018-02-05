@@ -8,10 +8,10 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
   	if @post.save
-  		flash[:success] = "Your post has been created successfully."
+  		flash[:success] = "Bien joué ça !"
   		redirect_to root_url
   	else
-  		flash[:danger] = "Something went wrong."
+  		flash[:danger] = "Erreur mon pote."
   		render 'new'
   	end
   end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   def logged_in_user
   	unless logged_in?
-  		flash[:danger] = "Please log in."
+  		flash[:danger] = "Arf, essaie de te logguer avant ;)."
   		redirect_to login_url
   	end
   end

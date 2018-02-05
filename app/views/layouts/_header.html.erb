@@ -1,9 +1,9 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "MAISON", root_path, id: "logo" %>
+        <%= link_to "ACCUEIL", root_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Accueil", root_path %></li>
 
             <% if logged_in? %>
             <li class="dropdown">
@@ -14,13 +14,13 @@
               <li><%= link_to "Voir mon profil", current_user %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
+                <%= link_to "Se déconnecter", logout_path, method: :delete %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Sign up", new_user_path %></li>
-          <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "Créer un compte", new_user_path %></li>
+          <li><%= link_to "Se connecter", login_path %></li>
         <% end %>
           </ul>
         </nav>
