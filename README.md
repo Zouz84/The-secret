@@ -16,14 +16,22 @@ SublimText > Ouvrir le dossier *secret*. Ouvrir le fichier *Gemfile*. Ctrl+a. Su
 ## 1.2. Le model
 Console > **Rails generate model User email:string**
 Sublime text > app > models > user.rb
-On fais appel à la méthode ***has_secure_password </br>
-  validates :password, presence: true, length: { minimum: 6 }**
+On sait que ce model doit avoir un attribut email, unique, avec une présence obligatoire: Dans notre model, le fichier User.rb, on va donc ajouter cet attribut: ```validates :email, presence: true, length: { maximum: 140 },
+                    format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }```
+Ici on informe la base de donnée qu'elle n'enregistrera ces données si et seulement si il y a bien un input pour l'**:email** (presence: true), et qu'il fais moins de X caractères.
+De plus, on précise ici que le format de l'input doit respecter *VALID_EMAIL_REGEX*, mais qu'on est pas regardant au case sensitive. 
+Cette variable ```VALID_EMAIL_REGEX``` est définie juste avant: ```VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i``` qui indique les caractères acceptés et la "structure" que doit avoir l'adresse mail (@, . )... J'vais pas vous mentir, c'est copié directement du [Book](http://ruby.railstutorial.org/ruby-on-rails-tutorial-book).
+
+On a donc un utilisateur qui input un email. Mais on est pas des sauvages, on va lui demander son nom: 
+ validates **:name**,  presence: true, length: { maximum: 15 }.
+
+On fais appel à la méthode **has_secure_password </br>
+  validates :password, presence: true, length: { minimum: 6 }** Qui dit que pour que les "password" soient stockés dans la Database, il doit être "présent" (true) et d'au minimum 6 caractères. Sans quoi le password ne sera pas enregistré.
+  
+### Petit po(i)nt.
+On a donc créé un model qui prend en compte 3 attributs: l'**:email**, le **:name** et le **:password**. Ces 3 attributs ont des validations particulières, qui font que notre base de donnée va pas sauvegarder n'importe quoi.
   
   SI y a pas la suite c'est que j'ai pas eu le temps de finir mon REadME avant le gong :)
-
-il y aura un attribut email, unique, avec une présence obligatoire
-il y aura un password, que l'on va gérer avec has_secure_password. Si jamais ta mémoire te trahit, voici le lien du chapitre du bouquin de Hartl qui en parlait
-Puis, étant donné que nous aimons bien créer des applications que les gens peuvent utiliser facilement, nous allons te demander de mettre à jour le fichier seeds.rb pour y rentrer un utilisateur qui te servira pour aller sur ton app.
 
 1.3. CRUD
 Pour le model User, fais un petit CRUD, afin de ne pas perdre la main ✌️
