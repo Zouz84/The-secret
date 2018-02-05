@@ -30,8 +30,12 @@ Je ne vais pas vous mentir, c'est copié directement du [Book](http://ruby.rails
 On a donc un utilisateur qui input un email. Mais on est pas des sauvages, on va lui demander son nom: 
  validates **:name**,  presence: true, length: { maximum: 15 }.
 
-On fais appel à la méthode **has_secure_password </br>
-  validates :password, presence: true, length: { minimum: 6 }** Qui dit que pour que les "password" soient stockés dans la Database, il doit être "présent" (true) et d'au minimum 6 caractères. Sans quoi le password ne sera pas enregistré.
+On fais appel à la méthode 
+``` ruby
+has_secure_password 
+  validates :password, presence: true, length: { minimum: 6 }
+```
+Qui dit que pour que les "password" soient stockés dans la Database, il doit être "présent" (true) et d'au minimum 6 caractères. Sans quoi le password ne sera pas enregistré.
   
 ### Petit po(i)nt.
 On a donc créé un model qui prend en compte 3 attributs: l'**:email**, le **:name** et le **:password**. Ces 3 attributs ont des validations particulières, qui font que notre base de donnée va pas sauvegarder n'importe quoi.
@@ -40,8 +44,8 @@ On a donc créé un model qui prend en compte 3 attributs: l'**:email**, le **:n
 
 ## 1.3. CRUD
 On se fait notre petit *CRUD* pour le model User:
-* Une Methode New: @user = User.new
-* Une Méthode Create: @user = User.new(user_params)
+* Une Methode New: `@user = User.new`
+* Une Méthode Create: `@user = User.new(user_params)`
 * Une Methode Show: `@user = User.find(params[:id])`
 
 
