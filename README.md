@@ -1,4 +1,5 @@
-# The Secret ###[(le vrai)](https://www.youtube.com/watch?v=fQu_twwpKvk)
+# The Secret
+[(le vrai)](https://www.youtube.com/watch?v=fQu_twwpKvk)
 
 ## Week 5 - Day 1
 #### Lundi 5 février
@@ -36,9 +37,9 @@ On a donc créé un model qui prend en compte 3 attributs: l'**:email**, le **:n
 
 ## 1.3. CRUD
 On se fait notre petit *CRUD* pour le model User:
-* Methode new: @user = User.new
-* Une Méthode create: @user = User.new(user_params)
-* Une Methode Show: `@user = User.find(params[:id])`
+* Une Methode New: @user = User.new
+* Une Méthode Create: @user = User.new(user_params)
+* Une Methode Show: ``` ruby #@user = User.find(params[:id])```
 
 2. Brève architecture
 Voici les deux pages importantes du site :
