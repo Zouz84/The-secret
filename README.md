@@ -14,13 +14,14 @@ Console > **rails new secret**.
 SublimText > Ouvrir le dossier *secret*. Ouvrir le fichier *Gemfile*. Ctrl+a. Suppr. Ouvrir le fichier [Gemfile de Felix](https://github.com/felhix/cheat_sheets/blob/master/Ruby/Gemfile.rb). Ctrl+a. Ctrl+c. On ctrl+v tout ça dans le *Gemfile* du dossier *secret*. 
 
 ## 1.2. Le model
-Console > **Rails generate model User email:string**
-Sublime text > app > models > user.rb
-On sait que ce model doit avoir un attribut email, unique, avec une présence obligatoire: Dans notre model, le fichier User.rb, on va donc ajouter cet attribut: ```validates :email, presence: true, length: { maximum: 140 },
-                    format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }```
-Ici on informe la base de donnée qu'elle n'enregistrera ces données si et seulement si il y a bien un input pour l'**:email** (presence: true), et qu'il fais moins de X caractères.
-De plus, on précise ici que le format de l'input doit respecter *VALID_EMAIL_REGEX*, mais qu'on est pas regardant au case sensitive. 
-Cette variable ```VALID_EMAIL_REGEX``` est définie juste avant: ```VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i``` qui indique les caractères acceptés et la "structure" que doit avoir l'adresse mail (@, . )... J'vais pas vous mentir, c'est copié directement du [Book](http://ruby.railstutorial.org/ruby-on-rails-tutorial-book).
+Console > **Rails generate model User email:string**</br>
+Sublime text > app > models > user.rb </br>
+On sait que ce model doit avoir un attribut email, unique, avec une présence obligatoire: </br> Dans notre model, le fichier User.rb, on va donc ajouter cet attribut: ```validates :email, presence: true, length: { maximum: 140 },
+                    format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }```</br>
+Ici on informe la base de donnée qu'elle n'enregistrera ces données si et seulement si il y a bien un input pour l'**:email** (presence: true), et qu'il fais moins de X caractères.</br>
+De plus, on précise ici que le format de l'input doit respecter *VALID_EMAIL_REGEX*, mais qu'on est pas regardant au case sensitive. </br>
+Cette variable ```VALID_EMAIL_REGEX``` est définie juste avant:</br> ```VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i``` qui indique les caractères acceptés et la "structure" que doit avoir l'adresse mail (@, . )...</br>
+Je ne vais pas vous mentir, c'est copié directement du [Book](http://ruby.railstutorial.org/ruby-on-rails-tutorial-book).
 
 On a donc un utilisateur qui input un email. Mais on est pas des sauvages, on va lui demander son nom: 
  validates **:name**,  presence: true, length: { maximum: 15 }.
