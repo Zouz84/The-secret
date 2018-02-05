@@ -38,7 +38,7 @@ On a donc créé un model qui prend en compte 3 attributs: l'**:email**, le **:n
 On se fait notre petit *CRUD* pour le model User:
 * Methode new: @user = User.new
 * Une Méthode create: @user = User.new(user_params)
-*  dq
+* Une Methode Show: `@user = User.find(params[:id])`
 
 2. Brève architecture
 Voici les deux pages importantes du site :
