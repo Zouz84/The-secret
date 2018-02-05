@@ -17,8 +17,11 @@ SublimText > Ouvrir le dossier *secret*. Ouvrir le fichier *Gemfile*. Ctrl+a. Su
 ## 1.2. Le model
 Console > **Rails generate model User email:string**</br>
 Sublime text > app > models > user.rb </br>
-On sait que ce model doit avoir un attribut email, unique, avec une présence obligatoire: </br> Dans notre model, le fichier User.rb, on va donc ajouter cet attribut: ```validates :email, presence: true, length: { maximum: 140 },
-                    format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }```</br>
+On sait que ce model doit avoir un attribut email, unique, avec une présence obligatoire: </br> Dans notre model, le fichier User.rb, on va donc ajouter cet attribut: 
+``` ruby
+validates :email, presence: true, length: { maximum: 140 },
+                    format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+                    ```</br>
 Ici on informe la base de donnée qu'elle n'enregistrera ces données si et seulement si il y a bien un input pour l'**:email** (presence: true), et qu'il fais moins de X caractères.</br>
 De plus, on précise ici que le format de l'input doit respecter *VALID_EMAIL_REGEX*, mais qu'on est pas regardant au case sensitive. </br>
 Cette variable ```VALID_EMAIL_REGEX``` est définie juste avant:</br> ```VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i``` qui indique les caractères acceptés et la "structure" que doit avoir l'adresse mail (@, . )...</br>
@@ -41,9 +44,7 @@ On se fait notre petit *CRUD* pour le model User:
 * Une Méthode Create: @user = User.new(user_params)
 * Une Methode Show: `@user = User.find(params[:id])`
 
-```ruby
-@user = User.new
-```
+
 
 2. Brève architecture
 Voici les deux pages importantes du site :
