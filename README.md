@@ -75,9 +75,9 @@ Dans le *index.html.Erb* qui se trouve dans en app>views>static_pages> on pourra
 ### 2.2. La page secrète
 La page secrète doit annoncer la réponse à la question de l'univers.
 
-3. Login ?
-Nous allons plus ou moins reprendre le chapitre de basic login pour cette partie. Si jamais tu es bloqué, la solution se trouvera sûrement dans ce chapitre 😎
-Jouer avec les logins et les mots de passe est un bon moyen de voir comment une app marche, sous le capot.
+
+## 3. Login ?
+
 
 3.1. La base
 Nous allons donc créer le login. Pour cela, il faut créer le controller des sessions, puis faire les views correspondantes. Crée le controller des sessions, avec comme méthodes new, create, et destroy.
