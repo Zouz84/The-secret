@@ -9,12 +9,12 @@ First of all, have a look on what we've done yesterday on that amazing Heroku ap
 Ce qu'il y a à savoir: Rien.
 
 ## 1. Les bases
-# 1.1. Création
+### 1.1. Création
 Console > **rails new secret**.
 **cd secret**
 SublimText > Ouvrir le dossier *secret*. Ouvrir le fichier *Gemfile*. Ctrl+a. Suppr. Ouvrir le fichier [Gemfile de Felix](https://github.com/felhix/cheat_sheets/blob/master/Ruby/Gemfile.rb). Ctrl+a. Ctrl+c. On ctrl+v tout ça dans le *Gemfile* du dossier *secret*. 
 
-## 1.2. Le model
+### 1.2. Le model
 Console > **Rails generate model User email:string**</br>
 Sublime text > app > models > user.rb </br>
 On sait que ce model doit avoir un attribut email, unique, avec une présence obligatoire: </br> Dans notre model, le fichier User.rb, on va donc ajouter cet attribut: 
@@ -39,35 +39,41 @@ Qui dit que pour que les "password" soient stockés dans la Database, il doit ê
   
 ### Petit po(i)nt.
 On a donc créé un model qui prend en compte 3 attributs: l'**:email**, le **:name** et le **:password**. Ces 3 attributs ont des validations particulières, qui font que notre base de donnée va pas sauvegarder n'importe quoi.
-  
-  SI y a pas la suite c'est que j'ai pas eu le temps de finir mon REadME avant le gong :)
 
-## 1.3. CRUD
+### 1.3. CRUD
 On se fait notre petit *CRUD* pour le model User:
 * Une Methode New: `@user = User.new`
 * Une Méthode Create: `@user = User.new(user_params)`
 * Une Methode Show: `@user = User.find(params[:id])`
+* Une Methode Edit: `@user = User.find(params[:id])`
 ``` ruby
- if @user.save
-      flash[:success] = "success"
-      
-      log_in @user
-      redirect_to @user
+@user = User.find(params[:id])
+  	if @user.update(user_params)
+  		redirect_to @user
+  	else render 'edit'
+  	end
+```
+Bien évidemment, au sein de ce controller, nous allons rajouter une methode '[private](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters)' qui va définir quels attributs sont nécessaires pour les paramètres.
 
-    else render 'new'
-    end
-    ```
-* Une Methode
+Ces Methodes auront chacune leur *'view'* que vous pouvez retrouver dans le Repository.
 
-
-
-2. Brève architecture
+## 2. Brève architecture
 Voici les deux pages importantes du site :
+### 2.1. La home
+Notre site va contenir une page d'accueil, qui va proposer en lien notre page top secrète.</br>
+- Est ce qu'on ferait pas un petit **rails generate controller static_pages index** ? Bin si.
+- Puis ensuite on ouvrirait notre fichier *config > routes.rb*
+- Puis on y indiquerait que notre page *root* est la page Index dans notre controlleur static_pages, de la sorte: `root 'static_pages#index'`afin que notre application sache où est sa maison.
+Dans le *index.html.Erb* qui se trouve dans en app>views>static_pages> on pourra faire une mise en bouche des plus explicites:
+> <h1> Coucou toi </h1>
 
-2.1. La home
-Notre site va contenir une page d'accueil, qui va proposer en lien notre page top secrète.
+> <h2> T'as déjà un compte? </h2>
+> <p> Non? T'attends quoi ? </p>
 
-2.2. La page secrète
+
+
+
+### 2.2. La page secrète
 La page secrète doit annoncer la réponse à la question de l'univers.
 
 3. Login ?
