@@ -66,7 +66,6 @@ Notre site va contenir une page d'accueil, qui va proposer en lien notre page to
 - Puis on y indiquerait que notre page *root* est la page Index dans notre controlleur static_pages, de la sorte: `root 'static_pages#index'`afin que notre application sache où est sa maison.
 Dans le *index.html.Erb* qui se trouve dans en app>views>static_pages> on pourra faire une mise en bouche des plus explicites:
 > <h1> Coucou toi </h1>
-
 > <h2> T'as déjà un compte? </h2>
 > <p> Non? T'attends quoi ? </p>
 
